@@ -1,0 +1,111 @@
+/* styles.css */
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Style for the navbar */
+.navbar {
+    /* Fixed position at the top of the screen */
+    position: sticky;
+    top: 0;
+    z-index: 100; /* Ensure it's on top of other content */
+
+    display: flex; /* Align items horizontally */
+    justify-content: space-between; /* Space out items evenly */
+    align-items: center; /* Center items vertically */
+    background-color: #333; /* Dark background color */
+    padding: 10px 20px; /* Space around the content */
+}
+
+/* Style for the logo */
+.navbar .logo {
+    color: white; /* White text color */
+    font-size: 24px; /* Larger font size */
+    font-weight: bold; /* Bold text */
+}
+
+/* Styles for the navigation links */
+.nav-links {
+    list-style: none; /* Remove bullet points */
+    display: flex; /* Align links horizontally */
+}
+
+/* Individual link styles */
+.nav-links li {
+    margin-left: 20px; /* Space between links */
+}
+
+.nav-links a {
+    color: white; /* White text color */
+    text-decoration: none; /* Remove underline */
+    font-size: 18px; /* Font size */
+}
+
+/* Style for the hamburger menu */
+.hamburger {
+    display: none; /* Hidden by default */
+    flex-direction: column; /* Stack bars vertically */
+    cursor: pointer; /* Pointer cursor on hover */
+}
+
+.hamburger span {
+    height: 3px; /* Height of each bar */
+    width: 25px; /* Width of each bar */
+    background: white; /* White color */
+    margin: 4px; /* Space between bars */
+    border-radius: 5px; /* Rounded corners */
+}
+
+/* Basic styles for content sections */
+section {
+    padding: 60px 20px;
+}
+
+section h1 {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+section p {
+    font-size: 18px;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none; /* Hide the links by default */
+        flex-direction: column; /* Stack links vertically */
+        width: 100%; /* Full width */
+        position: absolute; /* Position them absolutely */
+        top: 30px; /* Directly below the navbar */
+        left: 0; /* Align to the left */
+        background-color: #333; /* Background color */
+        padding: 10px 0; /* Padding around the links */
+    }
+
+    .nav-links li {
+        text-align: center; /* Center align links */
+        margin: 10px 0; /* Space between links */
+    }
+
+    .nav-links.active {
+        display: flex; /* Show the links when active */
+    }
+
+    .hamburger {
+        display: flex; /* Show the hamburger menu */
+    }
+}
+
+/* Add transition for smooth opening/closing */
+.nav-links {
+    transition: max-height 0.3s ease-in-out;
+    max-height: 0;
+    overflow: hidden;
+}
+
+.nav-links.active {
+    max-height: 500px; /* Adjust based on content height */
+}
